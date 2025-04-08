@@ -1,0 +1,17 @@
+Firstly I used chatgpt as my mentor..
+
+I've faced many problems and Complications while integrating AI...
+I thought to use Chat Gpt but some billing and api issues have come..
+For simpler and easy usage I gone to Gemini api..
+Again face lot many problems with model..
+
+Later me and chatgpt have fixed by analyzing and testing them..
+
+We came to know that Gemini-pro which we are trying to use is not available now..
+So we figured it out and used gemini-1.5-pro model..
+
+Again we tested and it finally worked..
+
+Thanks to Chatgpt for being as my mentor..
+
+Next Tasks: 1. Combining Score and AI response or 2. Turning into a web application..
