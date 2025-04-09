@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Resume Screener</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+  <div class="max-w-3xl mx-auto py-12 px-6 bg-white rounded-xl shadow-lg mt-10">
+    <h1 class="text-3xl font-bold text-center text-blue-600 mb-8">AI Resume Screener</h1>
+
+    <form method="POST" enctype="multipart/form-data" class="space-y-6">
+      <div>
+        <label class="block mb-2 font-semibold">Upload your resume (PDF only):</label>
+        <input type="file" name="resume" accept=".pdf" required
+               class="w-full border border-gray-300 p-2 rounded-md shadow-sm">
+      </div>
+      <div>
+        <button type="submit"
+                class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-200">
+          Analyze Resume
+        </button>
+      </div>
+    </form>
+
+    {% if ats_score is not none %}
+    <div class="mt-10">
+      <h2 class="text-2xl font-semibold text-green-600">Analysis Results</h2>
+
+      <p class="mt-4"><strong>📊 ATS Score:</strong> {{ ats_score }}/100</p>
+
+      <div class="mt-4">
+        <h3 class="font-semibold text-lg mb-2">✅ Resume Sections:</h3>
+        <ul class="list-disc list-inside space-y-1">
+          {% for section, present in sections.items() %}
+          <li>{{ section }}: {{ "✅ Found" if present else "❌ Missing" }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="mt-6">
+        <h3 class="font-semibold text-lg mb-2">🤖 AI Feedback:</h3>
+        <div class="whitespace-pre-line bg-gray-50 p-4 rounded-md border border-gray-300">
+          {{ ai_feedback }}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+</body>
+</html>
