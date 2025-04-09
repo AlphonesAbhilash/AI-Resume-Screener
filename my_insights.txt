@@ -15,3 +15,9 @@ Again we tested and it finally worked..
 Thanks to Chatgpt for being as my mentor..
 
 Next Tasks: 1. Combining Score and AI response or 2. Turning into a web application..
+
+Day 2:
+
+    I just combined all the files into one file i.e app.py.
+    And then added a basic web interface where user can be able to upload their resume and then submit and AI will give its response..
+    Good to work with Chatgpt..
